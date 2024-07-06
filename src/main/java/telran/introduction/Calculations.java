@@ -16,12 +16,11 @@ public class Calculations {
 
     public static int divide(int op1, int op2) {
         
-        if (op2 == 0) {
-            System.out.println("Divide by zero");
-            return -1;
-        }
+        int res = 0;
 
-        int res = op1 / op2;
+        if (op2 != 0) {
+            res = op1 / op2;
+        }
 
         return res;
     }
@@ -35,11 +34,12 @@ public class Calculations {
 
     public static int sumOfDigits(int nubmber) {
         
-        String numberStr = Integer.toString(nubmber);
+        String numberStr = Integer.toString(Math.abs(nubmber));
         int sum = 0;
         int currentDigit = 0;
+        int nubmberLength = numberStr.length();
 
-        for (int i = 0; i < numberStr.length(); i++) {
+        for (int i = 0; i < nubmberLength; i++) {
             currentDigit = Character.getNumericValue(numberStr.charAt(i));
             sum = sum + currentDigit;
         }
@@ -65,16 +65,13 @@ public class Calculations {
 
     public static boolean isDivideOn(int nubmber, int dividor) {
         
-        if (dividor == 0) {
-            System.out.println("Divide by zero");
-            return false;
+        boolean answer = false;
+
+        if (dividor != 0 && nubmber % dividor == 0) {
+            answer = true;
         }
 
-        if (nubmber % dividor == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return answer;
 
     }
 

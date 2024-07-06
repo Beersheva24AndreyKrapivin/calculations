@@ -28,7 +28,7 @@ public class CalculationsTest {
 
     @Test
     void sumOfDigitsTest() {
-        assertEquals(20, sumOfDigits(553331));
+        assertEquals(10, sumOfDigits(-253));
     }
 
     @Test
